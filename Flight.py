@@ -7,6 +7,31 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+def measure_sort_time(sort_function, data):
+    start = time.time()
+    sort_function(data)
+    end = time.time()
+    return end - start
+def plot_sort_time_vs_size(algorithms, flights):
+    size = np.arange(1, len(flights) + 1)
+    sort_times = []
+    labels = []
+    for algorithm in algorithms:
+        sort_time = np.zeros(len(flights))
+        for i in range(len(flights)):
+            sub_flights = flights[:i+1]
+            sort_time[i] = measure_sort_time(algorithm, sub_flights)
+        sort_times.append(sort_time)
+        labels.append(algorithm.__name__)
+
+    plt.figure(figsize=(8, 6))
+    for i in range(len(algorithms)):
+        plt.plot(size, sort_times[i], label=labels[i])
+    plt.legend()
+    plt.xlabel('Size of array')
+    plt.ylabel('Sorting time')
+    plt.savefig('sort_time_vs_size.png')
+
 class Flight:
     def __init__(self, flight_number, airline, arrival_date, arrival_time, passengers):
         self.flight_number = flight_number
@@ -43,40 +68,6 @@ class Flight:
 
 
 
-
-def sort_flights(flights, field, algorithm):
-    # if field not in ['arrival_date', 'arrival_time', 'airline', 'passengers']:
-    #     print("Invalid field. Please choose one of the following fields: 'arrival_date', 'arrival_time', 'airline', 'passengers'")
-    #     return flights
-
-    comparator = None
-    if field == 'airline':
-        comparator = 'airline'
-    elif field == 'arrival_date':
-        comparator = 'arrival_date'
-    elif field == 'arrival_time':
-        comparator = 'arrival_time'
-    elif field == 'passengers':
-        comparator = 'passengers'
-
-    if algorithm == 'bubble':
-        start_time = time.time()
-        bubble_sort(flights, comparator)
-        end_time = time.time()
-    elif algorithm == 'shaker':
-        start_time = time.time()
-        shaker_sort(flights, comparator)
-        end_time = time.time()
-    elif algorithm == 'quick':
-        start_time = time.time()
-        quick_sort(flights, comparator)
-        end_time = time.time()
-    else:
-        print("Invalid algorithm. Please choose one of the following algorithms: 'bubble', 'shaker', 'quick'")
-        return flights
-
-    print(f"Time taken by {algorithm} sort:", end_time - start_time)
-    return flights
 def save_flights_to_file(flights, file_name):
     with open(file_name, 'w') as f:
         for flight in flights:
@@ -88,40 +79,24 @@ def load_flights_from_file(file_name):
             flight_number, airline, arrival_date, arrival_time, passengers = line.strip().split(', ')
             flights.append(Flight(flight_number, airline, arrival_date, arrival_time, int(passengers)))
     return flights
+def measure_sort_times(data):
+    times = {}
+    times['quicksort_flights'] = measure_sort_time(quicksort_flights, data)*1000
+    times['bubble_sort_flights'] = measure_sort_time(bubble_sort_flights, data)*1000
+    times['shaker_sort_flights'] = measure_sort_time(shaker_sort_flights, data)*1000
+    return times
 
 
-generate_random_flights(3000)
+
+num_flights = 2000
+generate_random_flights(num_flights)
 flights = load_flights_from_file('flights.txt')
-# soeted_flights = bubble_sort(flights, 'arrival_date')
-# save_flights_to_file(soeted_flights, 'sorted_flights.txt')
+times = measure_sort_times(flights)
+for sort_algorithm, sort_time in times.items():
+    print(f"{sort_algorithm}: {sort_time} ms")
 
 
 
 
-
-def measure_sort_time(sort_function, data, field):
-    start = time.time()
-    sort_function(data, field)
-    end = time.time()
-    return end - start
-
-def plot_sort_time_vs_size(algorithm, flights, field):
-    size = np.arange(1, len(flights) + 1)
-    sort_time1 = np.zeros(len(flights))
-    for i in range(len(flights)):
-        sub_flights = flights[:i+1]
-        sort_time1[i] = measure_sort_time(algorithm, sub_flights, field)
-
-
-
-    plt.plot(size, sort_time1, label=algorithm.__name__)
-    plt.legend()
-    plt.xlabel('Size of array')
-    plt.ylabel('Sorting time')
-    plt.savefig("sort_time_vs_size.png")
-
-
-plot_sort_time_vs_size(quick_sort,flights, 'passengers')
-plot_sort_time_vs_size(bubble_sort,flights, 'passengers')
-plot_sort_time_vs_size(shaker_sort,flights, 'passengers')
-
+algorithms = [quicksort_flights,bubble_sort_flights,shaker_sort_flights]
+plot_sort_time_vs_size(algorithms, flights)
