@@ -1,0 +1,36 @@
+**Generating Flights**
+==================
+
+This script generates random flight data and writes it to a file named "flights.txt".
+
+
+.. code-block:: python
+
+   import random
+   from datetime import datetime, timedelta
+
+   countries = ["Russia", "USA", "China", "Japan", "India", "Australia", "Brazil", "Canada", "France", "Germany"]
+
+   def generate_flight():
+      flight_number = "AI{:03d}".format(random.randint(100, 9999))
+      airline = f"Air {random.choice(countries)}"
+      arrival_date = (datetime.now() + timedelta(days=random.randint(1, 365))).strftime("%Y-%m-%d")
+      arrival_time = "{:02d}:00".format(random.randint(0, 23))
+      # arrival_time = "{:02d}:{:02d}".format(random.randint(0, 23), random.choice([0, 15, 30, 45]))
+      # arrival_time = "{:02d}:{:02d}".format(random.randint(0, 23), random.randint(0, 59))
+      passenger_count = random.randint(22, 500)
+      return (flight_number, airline, arrival_date, arrival_time, passenger_count)
+
+   def generate_random_flights(size):
+      flights = [generate_flight() for _ in range(size)]
+      with open("flights.txt", "w") as file:
+         for flight in flights:
+               file.write("{}, {}, {}, {}, {}\n".format(*flight))
+      return flights
+
+Description
+-----------
+This script generates random flight data by selecting a random flight number, airline name, arrival date, arrival time, 
+and passenger count for a given number of flights. The list of available airline names is stored in the countries list, and the generate_flight function selects one of these names at random to use as the airline name for each flight. The arrival date is selected as a random date within the next year, and the arrival time is selected as a random hour within the day. 
+The passenger count is selected as a random number between 22 and 500.
+The generate_random_flights function calls the generate_flight function a given number of times to generate a list of flights, and then writes the flight data to a file named "flights.txt" in the format flight_number, airline, arrival_date, arrival_time, passenger_count. The list of flights is also returned by the function.

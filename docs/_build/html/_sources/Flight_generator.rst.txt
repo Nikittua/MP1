@@ -1,0 +1,12 @@
+Flight_generator
+========================
+
+This module defines the FlightGenerator class.
+.. note:: This module requires Python 3.6 or later.
+
+.. automodule:: Flight_generator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
