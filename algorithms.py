@@ -1,4 +1,15 @@
 def compare_flights(flight1, flight2):
+    """
+    Compares two flight objects based on a set of rules.
+
+    Parameters:
+    flight1 (Flight): A Flight object representing the first flight to compare.
+    flight2 (Flight): A Flight object representing the second flight to compare.
+
+    Returns:
+    int: A negative integer if flight1 should come before flight2, a positive integer if flight1 should come after
+    flight2, and zero if the two flights are equal according to the comparison rules.
+    """
     if flight1.arrival_date != flight2.arrival_date:
         return (flight1.arrival_date < flight2.arrival_date) * 2 - 1
     elif flight1.arrival_time != flight2.arrival_time:
@@ -8,6 +19,15 @@ def compare_flights(flight1, flight2):
     else:
         return (flight2.passengers - flight1.passengers)
 def quicksort_flights(arr):
+    """
+    Sorts an array of Flight objects using the quicksort algorithm.
+
+    Parameters:
+    arr (List[Flight]): A list of Flight objects to sort.
+
+    Returns:
+    List[Flight]: The sorted list of Flight objects.
+    """
     if len(arr) <= 1:
         return arr
     pivot = arr[len(arr) // 2]
@@ -24,6 +44,15 @@ def quicksort_flights(arr):
             equal.append(flight)
     return quicksort_flights(left) + equal + quicksort_flights(right)
 def bubble_sort_flights(flights):
+    """
+    Sorts an array of Flight objects using the bubble sort algorithm.
+
+    Parameters:
+    flights (List[Flight]): A list of Flight objects to sort.
+
+    Returns:
+    List[Flight]: The sorted list of Flight objects.
+    """
     n = len(flights)
 
     for i in range(n):
@@ -33,6 +62,15 @@ def bubble_sort_flights(flights):
 
     return flights
 def shaker_sort_flights(flights):
+    """
+    Sorts an array of Flight objects using the shaker sort algorithm.
+
+    Parameters:
+    flights (List[Flight]): A list of Flight objects to sort.
+
+    Returns:
+    List[Flight]: The sorted list of Flight objects.
+    """
     n = len(flights)
     left = 0
     right = n - 1
