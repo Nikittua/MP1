@@ -34,4 +34,3 @@
 
 .. figure::  images/sort_time_vs_size.png
    :align:   center
-

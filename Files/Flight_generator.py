@@ -32,7 +32,7 @@ def generate_random_flights(size):
     list: A list of flight details, where each detail is a tuple containing 5 elements: flight number (str), airline name (str), arrival date (str), arrival time (str), and passenger count (int).
     """
     flights = [generate_flight() for _ in range(size)]
-    with open("C:/Users/nikittua/Desktop/Methodi Progi/MP1/flights.txt", "w") as file:
+    with open("C:/Users/nikittua/Desktop/MP1/Files/flights.txt", "w") as file:
         for flight in flights:
             file.write("{}, {}, {}, {}, {}\n".format(*flight))
     return flights

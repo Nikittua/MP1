@@ -53,7 +53,7 @@ def plot_sort_time_vs_size(algorithms, flights):
     plt.legend()
     plt.xlabel('Size of array')
     plt.ylabel('Sorting time')
-    plt.savefig(os.path.join('C:/Users/nikittua/Desktop/Methodi Progi/docs/images', 'sort_time_vs_size.png'))
+    plt.savefig(os.path.join('C:/Users/nikittua/Desktop/MP1/docs/images', 'sort_time_vs_size.png'))
 def save_flights_to_file(flights, file_name):
     """
     Saves a list of Flight objects to a file.

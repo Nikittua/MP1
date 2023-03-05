@@ -1,7 +1,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath('C:\\Users\\nikittua\\Desktop\\Methodi Progi\\MP1'))
+sys.path.insert(0, os.path.abspath('C:/Users/nikittua/Desktop/MP1/Files'))
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 

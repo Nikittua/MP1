@@ -7,4 +7,3 @@ This module contains various algorithms used throughout the project.
    :members:
    :undoc-members:
    :show-inheritance:
-

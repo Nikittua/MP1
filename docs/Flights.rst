@@ -7,4 +7,3 @@ This module defines the Flight class.
    :members:
    :undoc-members:
    :show-inheritance:
-

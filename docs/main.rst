@@ -7,4 +7,3 @@ This module contains the main function for the project.
    :members:
    :undoc-members:
    :show-inheritance:
-

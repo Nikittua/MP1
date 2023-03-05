@@ -66,21 +66,10 @@ passengers (int): The number of passengers on the flight.</p>
 <dt class="sig sig-object py" id="Flight.measure_multiple_sort_times">
 <span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">measure_multiple_sort_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Flight.measure_multiple_sort_times" title="Permalink to this definition">¶</a></dt>
 <dd><p>Measures the time it takes for multiple sorting functions to sort a given array of data.</p>
-<dl>
+<dl class="simple">
 <dt>Args:</dt><dd><p>data (list): The data to be sorted.</p>
 </dd>
 <dt>Returns:</dt><dd><p>dict: A dictionary containing the time it took for each sorting function to sort the data in milliseconds.</p>
-</dd>
-<dt>Example:</dt><dd><p>data = [5, 2, 8, 6, 1, 9]</p>
-<p>times = measure_multiple_sort_times(data)</p>
-<p>print(times)</p>
-<dl class="simple">
-<dt># Output: </dt><dd><p>{‘quicksort_flights’: 0.04506111145019531,
-‘bubble_sort_flights’: 0.2799034118652344, 
-‘shaker_sort_flights’: 0.25582313537597656
-}</p>
-</dd>
-</dl>
 </dd>
 <dt>Notes:</dt><dd><p>This function uses the <cite>measure_sort_time</cite> function to measure the time it takes for the following three sorting functions to sort the given data:
 - quicksort_flights
@@ -95,18 +84,11 @@ The function returns a dictionary where the keys are the names of the sorting fu
 <dt class="sig sig-object py" id="Flight.measure_sort_time">
 <span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">measure_sort_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Flight.measure_sort_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Measures the time it takes for a sorting function to sort a given array of data.</p>
-<dl>
+<dl class="simple">
 <dt>Args:</dt><dd><p>sort_function (function): The sorting function to be tested.
 data (list): The data to be sorted.</p>
 </dd>
 <dt>Returns:</dt><dd><p>float: The time it took for the sorting function to sort the data in seconds.</p>
-</dd>
-<dt>Example:</dt><dd><p>data = [5, 2, 8, 6, 1, 9]</p>
-<p>time = measure_sort_time(quicksort_flights, data)</p>
-<p>print(time)</p>
-<p># Output: 0.04506111145019531</p>
-</dd>
-<dt>Notes:</dt><dd><p>This function uses the <cite>time</cite> module to measure the time it takes for the given sorting function to sort the given data. It returns the time in seconds.</p>
 </dd>
 </dl>
 </dd></dl>

@@ -8,4 +8,3 @@ This module defines the FlightGenerator class.
    :undoc-members:
    :show-inheritance:
 
-
