@@ -6,10 +6,11 @@ countries = ["Russia", "USA", "China", "Japan", "India", "Australia", "Brazil", 
 def generate_flight():
 
     """
-    Generates a random flight detail.
+    Генерирует случайные данные для объекта Flight.
 
-    Returns:
-    tuple: A tuple containing 5 elements: flight number (str), airline name (str), arrival date (str), arrival time (str), and passenger count (int).
+    **Возвращает:**
+    Tuple: кортеж, содержащий 5 элементов: номер рейса (str), название авиакомпании (str), д
+    ату прибытия (str), время прибытия (str) и количество пассажиров (int).
     """
     flight_number = "AI{:03d}".format(random.randint(100, 9999))
     airline = f"Air {random.choice(countries)}"
@@ -23,13 +24,15 @@ def generate_flight():
 def generate_random_flights(size):
     
     """
-    Generates a list of random flight details and writes them to a text file named "flights.txt".
+    Генерирует список случайных данных для объекта Flight и записывает 
+    их в текстовый файл «flights.txt».
 
-    Args:
-    size (int): The number of flight details to generate.
+    **Параметры:**
+    size (int): количество сведений о рейсе, которые необходимо сгенерировать.
 
-    Returns:
-    list: A list of flight details, where each detail is a tuple containing 5 elements: flight number (str), airline name (str), arrival date (str), arrival time (str), and passenger count (int).
+    **Возвращает:**
+    List: список деталей рейса, где каждая деталь представляет собой кортеж, содержащий 5 элементов: номер рейса (str), 
+    название авиакомпании (str), дату прибытия (str), время прибытия (str) и количество пассажиров (int).
     """
     flights = [generate_flight() for _ in range(size)]
     with open("C:/Users/nikittua/Desktop/MP1/Files/flights.txt", "w") as file:
