@@ -47,6 +47,41 @@
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="main.measure_multiple_sort_times">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">measure_multiple_sort_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.measure_multiple_sort_times" title="Permalink to this definition">¶</a></dt>
+<dd><p>Измеряет время, необходимое нескольким функциям сортировки для сортировки заданного массива данных.</p>
+<dl>
+<dt><strong>Параметры:</strong></dt><dd><p>data (List): данные для сортировки.</p>
+</dd>
+<dt><strong>Возвращает:</strong></dt><dd><p>Dict: словарь, содержащий время, которое потребовалось каждой функции сортировки для сортировки данных в миллисекундах.</p>
+</dd>
+<dt><strong>Примечания:</strong></dt><dd><p>Эта функция использует функцию <cite>measure_sort_time</cite> для измерения времени, 
+которое требуется следующим трем функциям сортировки для сортировки заданных данных:</p>
+<ul class="simple">
+<li><p>quicksort_flights</p></li>
+<li><p>bubble_sort_flights</p></li>
+<li><p>Shaker_sort_flights</p></li>
+</ul>
+<p>Функция возвращает словарь, где ключи — это имена функций сортировки, 
+а значения — это время, которое потребовалось каждой функции для сортировки данных в миллисекундах.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.measure_sort_time">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">measure_sort_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.measure_sort_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Измеряет время, которое требуется заданной функции для сортировки заданного массива данных.</p>
+<dl class="simple">
+<dt><strong>Параметры:</strong></dt><dd><p>sort_function (function): тестируемая функция сортировки.
+data (List): данные для сортировки.</p>
+</dd>
+<dt><strong>Возвращает:</strong></dt><dd><p>Lloat: время, которое потребовалось функции для сортировки данных</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="main.plot_sort_time_vs_size">
 <span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">plot_sort_time_vs_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algorithms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flights</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.plot_sort_time_vs_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Строит график зависимости времени сортировки различных алгоритмов от размера данных.</p>

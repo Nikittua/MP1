@@ -105,7 +105,7 @@ def measure_sort_time(sort_function, data):
 
 
 if __name__ == '__main__':
-    num_flights = 10000
+    num_flights = 2000
     generate_random_flights(num_flights)
     flights = load_flights_from_file('C:/Users/nikittua/Desktop/MP1/Files/flights.txt')
     times = measure_multiple_sort_times(flights)
@@ -113,7 +113,7 @@ if __name__ == '__main__':
         print(f"{sort_algorithm}: {sort_time} ms")
     save_flights_to_file(flights,'C:/Users/nikittua/Desktop/MP1/Files/sorted_flights.txt')
     algorithms = [quicksort_flights,bubble_sort_flights,shaker_sort_flights]
-    # plot_sort_time_vs_size(algorithms, flights)
+    plot_sort_time_vs_size(algorithms, flights)
 
 #TEST
 # flight1 = Flight("DL1234", "Delta", "2023-03-10", "15:30", 120)
