@@ -15,7 +15,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Flight_generator" href="Flight_generator.html" />
-    <link rel="prev" title="algorithms" href="algorithms.html" />
+    <link rel="prev" title="Algorithms" href="algorithms.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -39,43 +39,38 @@
 <dt class="sig sig-object py" id="Flight.Flight">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">Flight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flight_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airline</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arrival_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passengers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Flight.Flight" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Represents a flight with a flight number, airline, arrival date, arrival time, and number of passengers.</p>
-<dl class="simple">
-<dt>Attributes:</dt><dd><p>flight_number (str): The flight number.
-airline (str): The name of the airline.
-arrival_date (str): The date of arrival in ‘YYYY-MM-DD’ format.
-arrival_time (str): The time of arrival in ‘HH:MM’ format.
-passengers (int): The number of passengers on the flight.</p>
+<p>Описывает рейс с номером рейса, авиакомпанией, датой прибытия, временем прибытия и количеством пассажиров. 
+В данном классе реализоываны перегрузки операторов &gt; &lt; &gt;= &lt;= ==</p>
+<blockquote>
+<div><dl class="simple">
+<dt><strong>Атрибуты:</strong></dt><dd><p>Flight_number (str): номер рейса.
+airline  (str): Название авиакомпании.
+arrival_date  (str): Дата прибытия в формате «ГГГГ-ММ-ДД».
+arrival_time  (str): время прибытия в формате «ЧЧ:ММ».
+passengers  (int): количество пассажиров на рейсе.</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Flight.load_flights_from_file">
-<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">load_flights_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Flight.load_flights_from_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Loads a list of Flight objects from a file.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>file_name (str): The name of the file containing the flights.</p>
-</dd>
-<dt>Returns:</dt><dd><p>list: A list of Flight objects.</p>
-</dd>
-</dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="Flight.measure_multiple_sort_times">
 <span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">measure_multiple_sort_times</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Flight.measure_multiple_sort_times" title="Permalink to this definition">¶</a></dt>
-<dd><p>Measures the time it takes for multiple sorting functions to sort a given array of data.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>data (list): The data to be sorted.</p>
+<dd><p>Измеряет время, необходимое нескольким функциям сортировки для сортировки заданного массива данных.</p>
+<dl>
+<dt><strong>Параметры:</strong></dt><dd><p>data (List): данные для сортировки.</p>
 </dd>
-<dt>Returns:</dt><dd><p>dict: A dictionary containing the time it took for each sorting function to sort the data in milliseconds.</p>
+<dt><strong>Возвращает:</strong></dt><dd><p>Dict: словарь, содержащий время, которое потребовалось каждой функции сортировки для сортировки данных в миллисекундах.</p>
 </dd>
-<dt>Notes:</dt><dd><p>This function uses the <cite>measure_sort_time</cite> function to measure the time it takes for the following three sorting functions to sort the given data:
-- quicksort_flights
-- bubble_sort_flights
-- shaker_sort_flights
-The function returns a dictionary where the keys are the names of the sorting functions and the values are the time it took for each sorting function to sort the data in milliseconds.</p>
+<dt><strong>Примечания:</strong></dt><dd><p>Эта функция использует функцию <cite>measure_sort_time</cite> для измерения времени, 
+которое требуется следующим трем функциям сортировки для сортировки заданных данных:</p>
+<ul class="simple">
+<li><p>quicksort_flights</p></li>
+<li><p>bubble_sort_flights</p></li>
+<li><p>Shaker_sort_flights</p></li>
+</ul>
+<p>Функция возвращает словарь, где ключи — это имена функций сортировки, 
+а значения — это время, которое потребовалось каждой функции для сортировки данных в миллисекундах.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -83,34 +78,12 @@ The function returns a dictionary where the keys are the names of the sorting fu
 <dl class="py function">
 <dt class="sig sig-object py" id="Flight.measure_sort_time">
 <span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">measure_sort_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sort_function</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Flight.measure_sort_time" title="Permalink to this definition">¶</a></dt>
-<dd><p>Measures the time it takes for a sorting function to sort a given array of data.</p>
+<dd><p>Измеряет время, которое требуется заданной функции для сортировки заданного массива данных.</p>
 <dl class="simple">
-<dt>Args:</dt><dd><p>sort_function (function): The sorting function to be tested.
-data (list): The data to be sorted.</p>
+<dt><strong>Параметры:</strong></dt><dd><p>sort_function (function): тестируемая функция сортировки.
+data (List): данные для сортировки.</p>
 </dd>
-<dt>Returns:</dt><dd><p>float: The time it took for the sorting function to sort the data in seconds.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Flight.plot_sort_time_vs_size">
-<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">plot_sort_time_vs_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algorithms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flights</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Flight.plot_sort_time_vs_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plots the sorting time of different algorithms against the size of the data.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>algorithms (list): A list of sorting algorithms to be tested.
-flights (list): A list of Flight objects to be sorted.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="Flight.save_flights_to_file">
-<span class="sig-prename descclassname"><span class="pre">Flight.</span></span><span class="sig-name descname"><span class="pre">save_flights_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Flight.save_flights_to_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Saves a list of Flight objects to a file.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>flights (list): A list of Flight objects.
-file_name (str): The name of the file to save the flights to.</p>
+<dt><strong>Возвращает:</strong></dt><dd><p>Lloat: время, которое потребовалось функции для сортировки данных</p>
 </dd>
 </dl>
 </dd></dl>
@@ -136,7 +109,7 @@ file_name (str): The name of the file to save the flights to.</p>
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Файлы проекта:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="algorithms.html">algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Flight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Flight_generator.html">Flight_generator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
@@ -146,7 +119,7 @@ file_name (str): The name of the file to save the flights to.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="algorithms.html" title="previous chapter">algorithms</a></li>
+      <li>Previous: <a href="algorithms.html" title="previous chapter">Algorithms</a></li>
       <li>Next: <a href="Flight_generator.html" title="next chapter">Flight_generator</a></li>
   </ul></li>
 </ul>

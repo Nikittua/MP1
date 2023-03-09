@@ -34,7 +34,43 @@
   <section id="main">
 <h1>Main<a class="headerlink" href="#main" title="Permalink to this heading">¶</a></h1>
 <p>This module contains the main function for the project.</p>
-<span class="target" id="module-main"></span></section>
+<span class="target" id="module-main"></span><dl class="py function">
+<dt class="sig sig-object py" id="main.load_flights_from_file">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">load_flights_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.load_flights_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Загружает объекты Flight из файла в список.</p>
+<dl class="simple">
+<dt><strong>Параметры</strong></dt><dd><p>file_name (str): Имя файла, содержащего рейсы.</p>
+</dd>
+<dt><strong>Возвращает:</strong></dt><dd><p>list: Список объектов Flight.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.plot_sort_time_vs_size">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">plot_sort_time_vs_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algorithms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flights</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.plot_sort_time_vs_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Строит график зависимости времени сортировки различных алгоритмов от размера данных.</p>
+<dl class="simple">
+<dt><strong>Аргументы:</strong></dt><dd><p>algorithms (List): список алгоритмов сортировки, которые необходимо построить.
+flights (List): список объектов Flight для сортировки.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main.save_flights_to_file">
+<span class="sig-prename descclassname"><span class="pre">main.</span></span><span class="sig-name descname"><span class="pre">save_flights_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main.save_flights_to_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Сохраняет список объектов Flight в файл.</p>
+<dl class="simple">
+<dt><strong>Параметры:</strong>        </dt><dd><ul class="simple">
+<li><p>flights (List): список объектов полета.</p></li>
+<li><p>file_name (Str): имя файла, в который будут сохраняться полеты.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 
 
           </div>
@@ -55,7 +91,7 @@
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Файлы проекта:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="algorithms.html">algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Flights.html">Flight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Flight_generator.html">Flight_generator</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Main</a></li>

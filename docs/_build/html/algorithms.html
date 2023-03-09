@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>algorithms &#8212; MP1 1.0.0 documentation</title>
+    <title>Algorithms &#8212; MP1 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -33,48 +33,82 @@
           <div class="body" role="main">
             
   <section id="algorithms">
-<h1>algorithms<a class="headerlink" href="#algorithms" title="Permalink to this heading">¶</a></h1>
+<h1>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this heading">¶</a></h1>
 <p>This module contains various algorithms used throughout the project.</p>
 <span class="target" id="module-algorithms"></span><dl class="py function">
 <dt class="sig sig-object py" id="algorithms.bubble_sort_flights">
 <span class="sig-prename descclassname"><span class="pre">algorithms.</span></span><span class="sig-name descname"><span class="pre">bubble_sort_flights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flights</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#algorithms.bubble_sort_flights" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sorts an array of Flight objects using the bubble sort algorithm.</p>
-<p>Parameters:
-flights (List[Flight]): A list of Flight objects to sort.</p>
-<p>Returns:
-List[Flight]: The sorted list of Flight objects.</p>
+<dd><p><strong>Bubble Sort Algorithm:</strong>
+Алгоритм пузырьковой сортировки проходит по списку полетов, сравнивает соседние элементы и изменяет их местами, если они не удовлетвоярют условию сравнения.
+Этот процесс повторяется до тех пор, пока список не будет полностью отсортирован.</p>
+<p>Пузырьковая сортировка имеет сложность O(n^2), где n — количество элементов в списке.
+Обычно он считается из самых медленных алгоритмов сортировки и редко используется на практике для одного большого набора данных.</p>
+<p><strong>Параметры:</strong>
+Flights (List[Flight]): список объектов Flight для сортировки.</p>
+<p><strong>Возвращает:</strong>
+List[Flight]: отсортированный список объектов Flight.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="algorithms.compare_flights">
 <span class="sig-prename descclassname"><span class="pre">algorithms.</span></span><span class="sig-name descname"><span class="pre">compare_flights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flight1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flight2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#algorithms.compare_flights" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compares two flight objects based on a set of rules.</p>
-<p>Parameters:
-flight1 (Flight): A Flight object representing the first flight to compare.
-flight2 (Flight): A Flight object representing the second flight to compare.</p>
-<p>Returns:
-int: A negative integer if flight1 should come before flight2, a positive integer if flight1 should come after
-flight2, and zero if the two flights are equal according to the comparison rules.</p>
+<dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>  <span class="k">if</span> <span class="n">flight1</span><span class="o">.</span><span class="n">arrival_date</span> <span class="o">!=</span> <span class="n">flight2</span><span class="o">.</span><span class="n">arrival_date</span><span class="p">:</span>
+       <span class="k">return</span> <span class="p">(</span><span class="n">flight1</span><span class="o">.</span><span class="n">arrival_date</span> <span class="o">&lt;</span> <span class="n">flight2</span><span class="o">.</span><span class="n">arrival_date</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span> 
+
+<span class="mi">2</span>  <span class="k">elif</span> <span class="n">flight1</span><span class="o">.</span><span class="n">arrival_time</span> <span class="o">!=</span> <span class="n">flight2</span><span class="o">.</span><span class="n">arrival_time</span><span class="p">:</span>
+       <span class="k">return</span> <span class="p">(</span><span class="n">flight1</span><span class="o">.</span><span class="n">arrival_time</span> <span class="o">&lt;</span> <span class="n">flight2</span><span class="o">.</span><span class="n">arrival_time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="mi">3</span>  <span class="k">elif</span> <span class="n">flight1</span><span class="o">.</span><span class="n">airline</span> <span class="o">!=</span> <span class="n">flight2</span><span class="o">.</span><span class="n">airline</span><span class="p">:</span>
+       <span class="k">return</span> <span class="p">(</span><span class="n">flight1</span><span class="o">.</span><span class="n">airline</span> <span class="o">&lt;</span> <span class="n">flight2</span><span class="o">.</span><span class="n">airline</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="mi">4</span>  <span class="k">else</span><span class="p">:</span>
+       <span class="k">return</span> <span class="p">(</span><span class="n">flight2</span><span class="o">.</span><span class="n">passengers</span> <span class="o">-</span> <span class="n">flight1</span><span class="o">.</span><span class="n">passengers</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Параметры:</strong>
+flight1 (Flight)
+flight2 (Flight)</p>
+<p><strong>Возвращает:</strong></p>
+<p>1. Если даты прибытия не совпадают, функция возвращает отрицательное целое число, если рейс1 прибывает раньше рейса2, 
+или положительное целое число, если рейс1 прибывает позже рейса2. 
+Выражение (flight1.arrival_date &lt; Flight2.arrival_date) * 2 - 1 используется для преобразования логического результата сравнения в целое число.</p>
+<p>2. Если времена прибытия не равны, возвращается отрицательное целое число, 
+если рейс1 прибывает раньше рейса2, или положительное целое число, если рейс1 прибывает позже рейса2.</p>
+<p>3. Если авиакомпании не равны, возвращается отрицательное целое число, 
+если название авиакомпании рейса1 стоит перед названием авиакомпании рейса2 в лексикографическом порядке, 
+или положительное целое число, если название авиакомпании рейса1 идет после названия авиакомпании рейса2.</p>
+<p>4. Если ни одно из вышеперечисленных условий не выполняется, возвращается разница в количестве пассажиров на двух рейсах, которая будет положительным целым числом, 
+если у рейса2 больше пассажиров, чем у рейса1, или отрицательным целым числом, 
+если у рейса2 меньше пассажиров, чем у рейса1.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="algorithms.quicksort_flights">
-<span class="sig-prename descclassname"><span class="pre">algorithms.</span></span><span class="sig-name descname"><span class="pre">quicksort_flights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#algorithms.quicksort_flights" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sorts an array of Flight objects using the quicksort algorithm.</p>
-<p>Parameters:
-arr (List[Flight]): A list of Flight objects to sort.</p>
-<p>Returns:
-List[Flight]: The sorted list of Flight objects.</p>
+<span class="sig-prename descclassname"><span class="pre">algorithms.</span></span><span class="sig-name descname"><span class="pre">quicksort_flights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flights</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#algorithms.quicksort_flights" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Quicksort Algorithm:</strong>
+Алгоритм быстрой сортировки начинается с выбора центрального элемента из списка рейсов,
+который используется для разделения списка на два меньших списка: один с элементами, меньшими, чем центральный, и другой, с элементами, большими, чем центральный.
+Затем алгоритм рекурсивно сортирует эти меньшие списки до тех пор, пока не будет отсортирован весь список.</p>
+<p>В среднем быстрая сортировка имеет сложность O(n log n), где n — количество элементов в списке.
+Однако в худшем случае он может иметь временную сложность O (n ^ 2), если центральный элемент выбран неудачно.</p>
+<p><strong>Параметры:</strong>
+arr (List[Flight]): список объектов Flight для сортировки.</p>
+<p><strong>Возвращает:</strong>
+List[Flight]: отсортированный список объектов Flight.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="algorithms.shaker_sort_flights">
 <span class="sig-prename descclassname"><span class="pre">algorithms.</span></span><span class="sig-name descname"><span class="pre">shaker_sort_flights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flights</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#algorithms.shaker_sort_flights" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sorts an array of Flight objects using the shaker sort algorithm.</p>
-<p>Parameters:
-flights (List[Flight]): A list of Flight objects to sort.</p>
-<p>Returns:
-List[Flight]: The sorted list of Flight objects.</p>
+<dd><p><strong>Shaker Sort Algorithm:</strong>
+Алгоритм шейкерной сортировки — это вариант алгоритма пузырьковой сортировки, в котором список сортируется в обоих направлениях, начиная с обоих концов списка.
+Он работает, перемещая самый большой элемент вправо и самый маленький элемент влево, пока весь список не будет отсортирован.</p>
+<p>Сортировка шейкером имеет временную сложность O(n^2), где n — количество элементов в списке.
+Это улучшенная версия пузырьковой сортировки, которая сортирует в обоих направлениях, но имеет ту же временную сложность для наихудшего случая.</p>
+<p><strong>Параметры:</strong>
+Flights (List[Flight]): список объектов Flight для сортировки.</p>
+<p><strong>Возвращает:</strong>
+List[Flight]: отсортированный список объектов Flight.</p>
 </dd></dl>
 
 </section>
@@ -98,7 +132,7 @@ List[Flight]: The sorted list of Flight objects.</p>
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Файлы проекта:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">algorithms</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Algorithms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Flights.html">Flight</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Flight_generator.html">Flight_generator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
